@@ -46,6 +46,7 @@ class Disk {
 		color = c;											// 大きさと色を保存
 	}
 
+
 	Color diskcolor(){												// 円盤の色
 		return color;
 	}
