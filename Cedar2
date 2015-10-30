@@ -1,0 +1,374 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JSeparator;
+import javax.swing.JTextArea;
+import javax.swing.Timer;
+
+
+
+public class Cedar extends JFrame implements ActionListener {
+
+	  ImageIcon icon2,icon3,icon4,icon5,icon6,icon7,icon8;
+	  JPanel mp;
+	  JLabel pictureLabel2;
+	  JLabel labelf;
+	  Timer timer;
+		int count;
+		JButton startButton;
+		JButton stopButton;
+		JButton button;
+		JButton btn2;
+		JButton btn3;
+		JButton btn4;
+		JButton btn5;
+		JButton btn6;
+		JButton btn7;
+		JProgressBar bar;
+		JLabel label1,label2;
+
+
+	public static void main(String[] args){
+		Cedar test = new Cedar("Cedar");
+		test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		test.setVisible(true);
+	}
+
+	    Cedar(String title){
+		setTitle(title);
+		setBounds( 100, 100, 1024, 808);
+		JMenuBar menuBar = new JMenuBar();
+		JMenu menu1 = new JMenu("SOFT");
+		JMenu menu2= new JMenu("File");
+		JMenu menu3= new JMenu("Clear");
+		JMenu menu4= new JMenu("Reset");
+		JMenu menu5= new JMenu("GetImpl");
+		JMenu menu6= new JMenu("PrevFile");
+		JMenu menu7= new JMenu("Store");
+		JMenu menu8= new JMenu("Time");
+		JMenu menu9= new JMenu("Spli"
+				+ "t");
+		JMenu menu10= new JMenu("Places");
+		JMenu menu12= new JMenu("Levels");
+		JMenu menu13= new JMenu("ChangeLog");
+		JMenu menu14= new JMenu("Find");
+		JMenu menu15= new JMenu("World");
+		JMenu menu16= new JMenu("Def");
+		JMenu menu17= new JMenu("Position");
+		JMenu menu18= new JMenu("Normalize");
+		JMenu menu19= new JMenu("PrevPlace");
+		JMenu menu20= new JMenu("Reselect");
+		JMenu menu21= new JMenu("FirstLevelOnly");
+
+
+
+		JMenuItem item1 = new JMenuItem("SouceFilmMaker");
+		JMenuItem item2 = new JMenuItem("GCFScape");
+		menu1.add(item1);
+		menu1.add(item2);
+		JMenuItem item3= new JMenuItem("New File");
+		JMenuItem item4= new JMenuItem("Open File");
+		JMenuItem item5= new JMenuItem("Close File");
+		menu2.add(item3);
+		menu2.add(item4);
+		menu2.add(item5);
+
+		JSeparator separator = new JSeparator();
+		menu1.add(separator);
+		menu2.add(separator);
+
+		JMenu submenu1 = new JMenu("Adobe");
+		JMenuItem subitem1 = new JMenuItem("Premium");
+		JMenuItem subitem2 = new JMenuItem("AfterEfects");
+		submenu1.add(subitem1);
+		submenu1.add(subitem2);
+
+		JMenu submenu2 = new JMenu("Render");
+		JMenuItem subitem3 = new JMenuItem("Inport");
+		JMenuItem subitem4 = new JMenuItem("EXport");
+		submenu2.add(subitem3);
+		submenu2.add(subitem4);
+
+		menu1.add(submenu1);
+		menu2.add(submenu2);
+
+		menuBar.add(menu1);
+		menuBar.add(menu2);
+		menuBar.add(menu3);
+		menuBar.add(menu4);
+		menuBar.add(menu5);
+		menuBar.add(menu6);
+		menuBar.add(menu7);
+		menuBar.add(menu8);
+		menuBar.add(menu9);
+		menuBar.add(menu10);
+		menuBar.add(menu12);
+		menuBar.add(menu13);
+		menuBar.add(menu14);
+		menuBar.add(menu15);
+		menuBar.add(menu16);
+		menuBar.add(menu18);
+		menuBar.add(menu19);
+		menuBar.add(menu20);
+		menuBar.add(menu21);
+		setJMenuBar(menuBar);
+
+
+
+		JPanel p = new JPanel();
+		p.setPreferredSize(new Dimension(512,600 ));                     //パネルのサイズ設定
+		JTextArea textarea = new JTextArea(38, 42);                      //textareaのサイズ設定
+		 p.setLayout(new GridLayout(1, 1));
+		textarea.setLineWrap(true);
+		p.add(textarea);
+		getContentPane().add(p, BorderLayout.WEST);
+
+		p.setBackground(Color.ORANGE);
+		textarea.setMargin(new Insets(10, 10, 10, 10));                  //textareaに余白を付け足す
+		textarea.setFont(new Font("SFM", Font.PLAIN, 12));               //フォントおよびフォントサイズを指定
+		textarea.setBackground(new Color(163, 204, 163));
+
+
+
+    	mp = new JPanel();
+	    mp.setLayout(new GridLayout(3, 1));           //パネルmpを3行1列に設定
+		getContentPane().add(mp, BorderLayout.EAST);	//東
+		mp.setBackground(Color.BLUE);
+	//    ImageIcon icon1 = new ImageIcon("./td.png");   //課題2のダミーラベル
+	//	JLabel pictureLabel1 = new JLabel(icon1);
+	//   mp.add(pictureLabel1);
+	//    Container contentPane1 = getContentPane();
+	//   contentPane1.add(mp, BorderLayout.NORTH);
+		//ピクチャーラベル
+	    icon2 = new ImageIcon("./car0.jpg");
+	    icon3 = new ImageIcon("./car1.jpg");
+	    icon4 = new ImageIcon("./car2.jpg");
+	    icon5 = new ImageIcon("./car3.jpg");
+	    icon6 = new ImageIcon("./car4.jpg");
+	    icon7 = new ImageIcon("./car5.jpg");
+	    icon8 = new ImageIcon("./car6.jpg");
+
+		pictureLabel2 = new JLabel(icon2);
+
+	  mp.add(pictureLabel2);
+	    Container contentPane2 = getContentPane();
+	    contentPane2.add(mp, BorderLayout.SOUTH);	//南
+		getContentPane().add(mp);
+
+
+
+
+
+		//ファイルチューザー
+		button = new JButton("file select");
+		button.setName("fab");
+		button.addActionListener(this);
+
+		mp.add(button, BorderLayout.NORTH); //北
+
+		labelf = new JLabel();
+
+		mp.add(labelf, BorderLayout.NORTH); //北
+		getContentPane().add(mp);
+		getContentPane().add(mp);
+		//getContentPane().add(mp, BorderLayout.CENTER);
+		//getContentPane().add(mp, BorderLayout.PAGE_END);
+
+
+
+
+	    //プログレスバーの設定
+	   int count = 0;
+		label1 = new JLabel("Not Start");
+		mp.add(label1, BorderLayout.CENTER);
+		startButton = new JButton("start");
+		startButton.setName("sta");
+		startButton.addActionListener(this);
+		startButton.setActionCommand("start");
+
+		stopButton = new JButton("stop");
+		stopButton.setName("stp");
+		stopButton.addActionListener(this);
+		stopButton.setActionCommand("stop");
+		stopButton.setEnabled(false);
+
+	//	JPanel buttonPanel = new JPanel();
+		mp.add(startButton, BorderLayout.CENTER);
+		mp.add(stopButton, BorderLayout.CENTER);
+
+		bar = new JProgressBar();
+		bar.setValue(0);
+
+	//	JPanel barPanel = new JPanel();
+		mp.add(bar);
+		timer = new Timer(100, this);             //swing用のタイマーをimportすることで実装できる
+
+
+		getContentPane().add(mp, BorderLayout.PAGE_START);
+		getContentPane().add(mp, BorderLayout.PAGE_END);
+		getContentPane().add(mp, BorderLayout.CENTER);
+
+
+
+
+
+
+
+		//画面下のボタンのパネル
+		JPanel p1 = new JPanel();
+	    p1.setBackground(Color.GRAY);
+	    Container contentPane = getContentPane();
+	    contentPane.add(p1, BorderLayout.SOUTH);
+
+
+
+		p1.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		ImageIcon btnicon2 = new ImageIcon("./b1.png");
+		btn2 = new JButton(btnicon2);
+		btn2.setName("b1");
+		p1.add(btn2);
+
+
+		ImageIcon btnicon3 = new ImageIcon("./b2.png");
+		btn3 = new JButton(btnicon3);
+		btn3.setName("b2");
+		p1.add(btn3);
+
+
+		ImageIcon btnicon4 = new ImageIcon("./b3.png");
+		btn4 = new JButton(btnicon4);
+		btn4.setName("b3");
+		p1.add(btn4);
+
+
+		ImageIcon btnicon5 = new ImageIcon("./b4.png");
+		btn5 = new JButton(btnicon5);
+		btn5.setName("b4");
+		p1.add(btn5);
+
+
+		ImageIcon btnicon6 = new ImageIcon("./b5.png");
+		btn6 = new JButton(btnicon6);
+		btn6.setName("b5");
+		p1.add(btn6);
+
+
+		ImageIcon btnicon7 = new ImageIcon("./b6.png");
+		btn7 = new JButton(btnicon7);
+		btn7.setName("b6");
+	    p1.add(btn7);
+
+
+
+		     btn2.addActionListener(this);
+		     btn3.addActionListener(this);         //各ボタンが押されることにより、actionPerformedを呼び出すようにしている
+		     btn4.addActionListener(this);
+		     btn5.addActionListener(this);
+		     btn6.addActionListener(this);
+		     btn7.addActionListener(this);
+
+
+
+
+	    }
+
+
+
+
+    	//それぞれのボタンによるイベント処理メソッドをオーバーライド
+		public void actionPerformed(ActionEvent e) {
+			int a=1;
+
+			//プログレスバーの処理
+			if (e.getSource() == timer){
+				label1.setText(count + " count");
+				if (count >= 100){
+					stopButton.setEnabled(false);
+					startButton.setEnabled(true);
+					timer.stop();
+					bar.setValue(count);
+					count = 0;
+					a++;
+				}
+				else{
+					count++;
+					bar.setValue(count);
+					a++;
+				}
+			}
+			else if (count <= 100){
+				String cmd = e.getActionCommand();
+				if (cmd.equals("start")){
+					stopButton.setEnabled(true);
+					startButton.setEnabled(false);
+					timer.start();
+					a++;
+				}
+				else if (cmd.equals("stop")){
+					stopButton.setEnabled(false);
+					startButton.setEnabled(true);
+					timer.stop();
+					a++;
+				}
+
+			}
+
+			if(a==1){
+			JButton one = (JButton) e.getSource();
+
+			//ファイルチューザーの処理
+		 if(one.getName() == "fab"){
+			JFileChooser filechooser = new JFileChooser();
+			int selected = filechooser.showOpenDialog(this);
+			if (selected == JFileChooser.APPROVE_OPTION){
+				File file = filechooser.getSelectedFile();
+				labelf.setText(file.getName());
+			}
+
+		 }
+
+			 //各画像切り替えの処理
+		     else if(one.getName() == "b1"){
+				    pictureLabel2.setIcon(icon3);
+			 }
+			 else if(one.getName() == "b2"){
+				 pictureLabel2.setIcon(icon4);
+			 }
+			 else if(one.getName() == "b3"){
+				 pictureLabel2.setIcon(icon5);
+			 }
+			 else if(one.getName() == "b4"){
+				 pictureLabel2.setIcon(icon6);
+			 }
+			 else if(one.getName() == "b5"){
+				 pictureLabel2.setIcon(icon7);
+			 }
+
+			 else if(one.getName() == "b6"){
+				 pictureLabel2.setIcon(icon8);
+			 }
+
+			}
+		}
+
+
+}
